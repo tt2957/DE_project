@@ -34,9 +34,7 @@ GAMES_CONFIG = {
     "FC 26": {
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/EAFC26_SEASONAL_SOLID_CHALK_WHITE_HORIZONTAL_RGB.svg/1024px-EAFC26_SEASONAL_SOLID_CHALK_WHITE_HORIZONTAL_RGB.svg.png", # 예시 로고
     },
-    "GTA 5": {
-        "img": "https://logos-world.net/wp-content/uploads/2021/02/Grand-Theft-Auto-V-GTA-5-Logo.png",
-    }
+
 }
 
 st.markdown("""
