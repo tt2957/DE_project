@@ -3,7 +3,8 @@ import duckdb
 from datetime import timedelta
 
 # DB 파일 경로
-DB_PATH = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\db\steam.duckdb"
+import os
+DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
 
 # 사용자 제공 매핑 (필요 시 활용)
 NAME_MAPPER = {

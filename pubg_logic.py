@@ -3,8 +3,9 @@ import pandas as pd
 import streamlit as st
 from datetime import timedelta
 
-DB_PATH = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\db\steam.duckdb"
-MATCH_DATA_PATH = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\data\processed\matches.csv"
+import os
+DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
+MATCH_DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "processed", "matches.csv")
 GAME_NAME = "PUBG: Battlegrounds"
 
 # 맵 이름 변환 딕셔너리

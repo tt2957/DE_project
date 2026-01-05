@@ -86,9 +86,9 @@ if st.session_state.page == 'Home':
         with cols[i % 4]:
             # 카드 형태의 컨테이너
             with st.container(border=True):
-                st.image(info["img"], use_container_width=True)
+                st.image(info["img"], width='stretch')
                 st.subheader(game_name)
-                if st.button("분석 시작", key=f"btn_{game_name}", use_container_width=True):
+                if st.button("분석 시작", key=f"btn_{game_name}", width='stretch'):
                     go_to_page(game_name)
 
 
@@ -183,7 +183,7 @@ elif st.session_state.page == "Apex Legends":
     )
 
     # 4. 차트 출력
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     
 
 elif st.session_state.page == "PUBG":
@@ -245,9 +245,9 @@ elif st.session_state.page == "PUBG":
         with cols[0]:
             with st.container(border=True):
             # 통합 분석용 아이콘 이미지 (원하시는 URL로 교체 가능)
-                st.image("https://logodownload.org/wp-content/uploads/2019/12/pubg-logo-0.png", use_container_width=True)
+                st.image("https://logodownload.org/wp-content/uploads/2019/12/pubg-logo-0.png", width='stretch')
                 st.subheader("🌐 전체 통합 분석")
-                if st.button("통합 리포트 보기", key="btn_all_maps", use_container_width=True):
+                if st.button("통합 리포트 보기", key="btn_all_maps", width='stretch'):
                     st.session_state.selected_map = "All" # 전체 통합용 키값
                     st.session_state.pubg_sub = 'MapDetail'
                     st.rerun()
@@ -257,9 +257,9 @@ elif st.session_state.page == "PUBG":
         # i+1 을 하여 통합 카드 다음 칸부터 배치함
             with cols[(i + 1) % 3]:
                 with st.container(border=True):
-                    st.image(m_info['img'], use_container_width=True)
+                    st.image(m_info['img'], width='stretch')
                     st.subheader(m_info['name'])
-                    if st.button(f"{m_info['name']} 리포트 보기", key=f"btn_{m_id}", use_container_width=True):
+                    if st.button(f"{m_info['name']} 리포트 보기", key=f"btn_{m_id}", width='stretch'):
                         st.session_state.selected_map = m_id
                         st.session_state.pubg_sub = 'MapDetail'
                         st.rerun()
@@ -358,7 +358,7 @@ elif st.session_state.page == "PUBG":
             )
 
             # 4. 차트 출력
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width='stretch')
 
 # =========================
 # 4. 스팀기반게임들
@@ -434,4 +434,4 @@ if st.session_state.page in steam_games:
         )
 
         # 4. 차트 출력
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')

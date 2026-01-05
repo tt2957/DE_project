@@ -18,7 +18,8 @@ plt.rcParams['figure.titlesize'] = 14
 # --------------------------
 # 1️⃣ CSV 불러오기
 # --------------------------
-DB_PATH = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\data\processed\matches.csv"
+import os
+DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
 df = pd.read_csv(DB_PATH, parse_dates=["created_at"])
 print(f"총 매치 수: {len(df)}")
 print(df.head())

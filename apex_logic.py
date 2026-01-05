@@ -7,7 +7,8 @@ from datetime import timedelta
 # =========================
 # 1. 설정 및 상수 정의
 # =========================
-DB_PATH = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\db\steam.duckdb"
+import os 
+DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
 GAME_NAME = "Apex Legends"
 
 TIER_ORDER = [
