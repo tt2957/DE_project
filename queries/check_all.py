@@ -2,9 +2,9 @@ import duckdb
 import pandas as pd
 import os
 # 1. DB 연결
-db_path = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\db\steam.duckdb"
+DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
 
-con = duckdb.connect(db_path)
+con = duckdb.connect(DB_PATH)
 
 try:
     print("=== [Steam 데이터 수집 전체 현황] ===")

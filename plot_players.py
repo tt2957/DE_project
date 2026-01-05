@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from datetime import timedelta
-
+import os 
 # 1. DB 연결 및 데이터 로드
-DB_PATH = r"C:\Users\ouzum\OneDrive\Desktop\데엔 심화\db\steam.duckdb"
+DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
 con = duckdb.connect(DB_PATH)
 
 query = """

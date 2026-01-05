@@ -306,7 +306,7 @@ elif st.session_state.page == "PUBG":
         # A. 서버 상태 (신호등)
         c_lab, c_score = pl.calculate_pubg_status(ccu_df)
         if c_lab == "쾌적":
-            status_color = "#28A745" # 초록색
+            status_color = "#28A745" # 초록색DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
             status_emoji = "🟢"
         elif c_lab == "보통":
             status_color = "#FFC107" # 노란색
