@@ -2,9 +2,6 @@
 venv/
 .venv/
 
-# DuckDB 데이터베이스 파일 (용량이 크므로 제외 권장)
-*.duckdb
-*.db
 
 # 파이썬 캐시
 __pycache__/
