@@ -1,0 +1,14 @@
+# 가상환경
+venv/
+.venv/
+
+# DuckDB 데이터베이스 파일 (용량이 크므로 제외 권장)
+*.duckdb
+*.db
+
+# 파이썬 캐시
+__pycache__/
+*.py[cod]
+
+# 설정 파일
+.env

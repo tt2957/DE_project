@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "DuckDB",
+            "name": "duckdb",
+            "database": "${workspaceFolder:데엔 심화}/db/steam.duckdb"
+        }
+    ],
+    "sqltools.useNodeRuntime": false,
+    "python-envs.pythonProjects": []
+}
