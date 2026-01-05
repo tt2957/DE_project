@@ -9,9 +9,15 @@ from utils.steam_api import get_current_players
 from utils.db import get_connection, init_tables
 
 # src 폴더 안에 있으므로 부모 폴더(..)로 나가서 찾아야 함
-BASE_DIR = Path(__file__).resolve().parent.parent
+current_file_path = Path(__file__).resolve()
+
+# 2. 부모 폴더(src)의 부모(Root)를 찾습니다.
+# .parent는 src/, .parent.parent는 Root/ 입니다.
+BASE_DIR = current_file_path.parent.parent
+
+# 3. 이제 Root에서 db 폴더로 들어갑니다.
+DB_PATH = BASE_DIR / "db" / "steam.duckdb"
 CONFIG_PATH = BASE_DIR / "config" / "games.json"
-DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
 
 def load_games():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:

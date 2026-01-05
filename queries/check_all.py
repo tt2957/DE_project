@@ -1,8 +1,26 @@
 import duckdb
 import pandas as pd
 import os
+import sys
+from pathlib import Path
 # 1. DB 연결
-DB_PATH = os.path.join(os.path.dirname(__file__), "db", "steam.duckdb")
+# 'src.'을 제거하고 수정 (이미 src 폴더 안이므로)
+
+
+# src 폴더 안에 있으므로 부모 폴더(..)로 나가서 찾아야 함
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# 2. 모듈 임포트 경로 추가 (utils 폴더를 찾기 위함)
+# 이 코드가 있어야 'from utils.steam_api'를 안정적으로 불러옵니다.
+sys.path.append(str(BASE_DIR / "src"))
+
+from utils.steam_api import get_current_players
+from utils.db import get_connection, init_tables
+
+# 3. 경로 정의 (수정된 부분)
+CONFIG_PATH = BASE_DIR / "config" / "games.json"
+# os.path.join 대신 이미 만든 BASE_DIR를 사용하세요!
+DB_PATH = BASE_DIR / "db" / "steam.duckdb"
 
 con = duckdb.connect(DB_PATH)
 

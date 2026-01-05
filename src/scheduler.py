@@ -3,13 +3,24 @@ import schedule
 from datetime import datetime
 import sys
 import os
-
+from pathlib import Path
 # 현재 파일(scheduler.py)이 있는 src 폴더의 절대 경로를 계산
-current_dir = os.path.dirname(os.path.abspath(__file__))
+current_file_path = Path(__file__).resolve()
 
-# 파이썬 경로 리스트의 맨 앞에 src 폴더를 추가 (가장 높은 우선순위)
-if current_dir not in sys.path:
-    sys.path.insert(0, current_dir)
+# 2. 부모 폴더(src)의 부모(Root)를 찾습니다.
+# .parent는 src/, .parent.parent는 Root/ 입니다.
+BASE_DIR = current_file_path.parent.parent
+
+# 3. 이제 Root에서 db 폴더로 들어갑니다.
+DB_PATH = BASE_DIR / "db" / "steam.duckdb"
+CONFIG_PATH = BASE_DIR / "config" / "games.json"
+
+# 3. 파이썬 경로 설정
+# 메인 파일과 utils를 찾기 위해 루트와 src를 모두 등록합니다.
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+if str(BASE_DIR / "src") not in sys.path:
+    sys.path.insert(0, str(BASE_DIR / "src"))
 
 import main 
 import importlib
